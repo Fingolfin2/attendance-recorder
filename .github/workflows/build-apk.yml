@@ -17,6 +17,9 @@ on:
 permissions:
   contents: read
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build-apk:
     runs-on: ubuntu-latest
@@ -39,6 +42,8 @@ jobs:
         run: npm ci
       - name: Sync Capacitor Android project
         run: npm run apk:prepare
+      - name: Make Gradle wrapper executable
+        run: chmod +x android/gradlew
       - name: Build debug APK
         working-directory: android
         run: ./gradlew assembleDebug
@@ -47,3 +52,4 @@ jobs:
         with:
           name: attendance-recorder-debug-apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
+
