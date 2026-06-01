@@ -1,0 +1,14 @@
+{
+  "name": "每日打卡记录器",
+  "short_name": "打卡器",
+  "description": "按北京时间与三时段规则统计有效打卡次数的离线 PWA。",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#eef4ff",
+  "theme_color": "#1d4ed8",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

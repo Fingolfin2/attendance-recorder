@@ -1,0 +1,69 @@
+:root {
+  font-family: Inter, "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+  color: #172033;
+  background: #eef4ff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input, select { font: inherit; }
+button { border: 0; border-radius: 999px; padding: .75rem 1rem; background: #e8eefc; color: #14213d; font-weight: 700; cursor: pointer; }
+button:hover { filter: brightness(.97); }
+button.active, button.punch-button { background: #1d4ed8; color: white; }
+button.danger { color: #b42318; background: #fee4e2; }
+input, select { width: 100%; border: 1px solid #d4dce9; border-radius: 14px; padding: .75rem .85rem; background: white; }
+label { display: grid; gap: .35rem; margin: .75rem 0; font-weight: 700; color: #344054; }
+progress { width: 100%; height: 16px; accent-color: #1d4ed8; }
+
+.app { width: min(520px, calc(100% - 20px)); margin: 0 auto; padding: 24px 0 48px; }
+.hero-card { display: grid; grid-template-columns: 1fr; gap: 16px; align-items: end; padding: 24px; border-radius: 28px; background: linear-gradient(135deg, #1d4ed8, #0f172a); color: white; box-shadow: 0 20px 60px rgba(29, 78, 216, .24); }
+.hero-card h1 { margin: .15rem 0 .5rem; font-size: clamp(1.9rem, 8vw, 3rem); }
+.hero-card p { margin: 0; color: #dbeafe; }
+.eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .8rem; }
+.clock { min-width: 260px; padding: 16px; border-radius: 20px; background: rgba(255,255,255,.12); display: grid; gap: 8px; }
+.clock span { color: #bfdbfe; }
+.clock strong { font-size: 1.2rem; }
+.tabs { position: sticky; top: 0; z-index: 3; display: flex; gap: 8px; overflow-x: auto; padding: 14px 0; background: rgba(238,244,255,.92); backdrop-filter: blur(8px); }
+.message { display: flex; justify-content: space-between; gap: 12px; align-items: center; margin: 8px 0 16px; padding: 12px 16px; border-radius: 18px; background: #fff7ed; color: #9a3412; border: 1px solid #fed7aa; }
+.message button { padding: 4px 10px; background: transparent; color: inherit; }
+.grid { display: grid; gap: 16px; }
+.grid.two { grid-template-columns: 1fr; }
+.panel { padding: 20px; border-radius: 24px; background: rgba(255,255,255,.9); border: 1px solid #dce6f5; box-shadow: 0 10px 30px rgba(15,23,42,.06); }
+.panel h2 { margin: 0 0 12px; }
+.wide { grid-column: 1 / -1; }
+.primary-panel { min-height: 260px; display: grid; align-content: center; gap: 16px; }
+.status-line, .next-time, .hint { color: #475467; }
+.punch-button { width: min(100%, 360px); padding: 1.2rem 2rem; font-size: 1.25rem; box-shadow: 0 14px 30px rgba(29,78,216,.28); }
+.big-number { font-size: 4rem; font-weight: 900; color: #1d4ed8; }
+.big-number span { font-size: 1.3rem; color: #667085; }
+.toolbar { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.toolbar input { max-width: 180px; }
+.month-summary { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 14px; border-radius: 18px; background: #f8fafc; margin-bottom: 16px; }
+.calendar-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.day-card { min-height: 128px; padding: 12px; border-radius: 18px; background: #f8fafc; border: 1px solid #e4e7ec; }
+.day-card.holiday { background: #fff1f2; border-color: #fecdd3; }
+.day-card.has-punch { box-shadow: inset 0 0 0 2px #93c5fd; }
+.day-top { display: flex; justify-content: space-between; align-items: center; }
+.day-top span { background: #e11d48; color: white; border-radius: 999px; padding: 2px 8px; font-size: .75rem; }
+.day-card p { margin: 8px 0; color: #475467; font-size: .88rem; }
+.day-card small { color: #1d4ed8; }
+.record-list, .audit-list { display: grid; gap: 10px; max-height: 58vh; overflow: auto; padding-right: 4px; }
+.record { display: grid; grid-template-columns: 1fr auto auto auto; gap: 10px; align-items: center; padding: 12px; border-radius: 18px; background: #f8fafc; border: 1px solid #e4e7ec; }
+.record small, .audit span { display: block; color: #667085; margin-top: 4px; }
+.badge { border-radius: 999px; padding: 5px 10px; background: #f2f4f7; color: #475467; font-size: .85rem; }
+.badge.ok { background: #dcfce7; color: #166534; }
+.audit { padding: 10px 0; border-bottom: 1px solid #eef2f7; }
+
+@media (max-width: 760px) {
+  .app { width: min(100% - 16px, 1120px); padding-top: 8px; }
+  .hero-card, .grid.two { grid-template-columns: 1fr; }
+  .clock { min-width: 0; }
+  .tabs button { flex: 0 0 auto; }
+  .calendar-grid { grid-template-columns: 1fr; }
+  .record { grid-template-columns: 1fr; }
+  .toolbar { justify-content: space-between; }
+}
+
